@@ -3,7 +3,7 @@
 
 ## What is Project 0?
 
-** How to play **
+How to play:
 
 ## MVP User Stories:
 - As a user, I'd like to be able to name my pet so I can personalize the game.
@@ -23,7 +23,7 @@ At the top of the square screen, there will be icons that the user can select an
 
 In the middle of the screen the user will see the tamagotchi.
 
-![tamagotchi wireframe](https://imgur.com/1P5vCAi)
+![tamagotchi wireframe](https://imgur.com/1P5vCAi.png)
 
 ## Approach:
 
