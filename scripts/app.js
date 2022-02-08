@@ -86,8 +86,21 @@ class Tamagotchi {
   }
 
 }
+/* === Make New Tamagotchi / Input Name === */
+let tamagotchi = {};
 
-const tamagotchi = new Tamagotchi("Stevie");
+$(window).on('load', function() {
+  $('#name_modal').modal('show');
+});
+
+const makeTamagotchi = function() {
+  console.log("saveName function called");
+  $(".modal-footer button").off();
+  $('#name_modal').modal('hide');
+  tamagotchi = new Tamagotchi($(".modal-body input").val());
+}
+
+$(".modal-footer button").click(makeTamagotchi);
 
 /* === Age Tamagotchi and Decrease Stats Over Time === */
 
@@ -202,17 +215,3 @@ $("#C").click(cancelAction);
 
 /* === Popup Windows === */
 
-/* === Save Tamagotchi Name === */
-$(window).on('load', function() {
-  $('#name_modal').modal('show');
-});
-
-
-const saveName = function() {
-  console.log("saveName function called");
-  const tamagotchiName = $("#input_name").val();
-  $("#name_input_ok_button").off();
-  return tamagotchiName
-}
-
-const userInputName = $("#name_input_ok_button").click(saveName());
