@@ -33,7 +33,6 @@
 <body>
 
   <!-- pop up modal on page load to input tamagotchi name -->
-
   <div class="modal" tabindex="-1" id="name_modal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -45,7 +44,7 @@
           <input type="textbox" id="input_name">
           
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" id="name_modal_footer">
           
           <button type="button" class="okButton" id="name_input_ok_button">OK</button>
         </div>
@@ -53,14 +52,45 @@
     </div>
   </div>
 
-  <!-- pop up box upon tamagotchi death -->
-  <details class="dialog-box" id="death_dialog">
+  <!-- pop up modal upon tamagotchi death -->
+  <div class="modal" tabindex="-1" id="death_modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your Tamagotchi has died!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          
+        </div>
+        <div class="modal-footer" id="death_modal_footer">
+          
+          <button type="button" class="okButton" id="death_modal_ok_button">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  </details>
   <!-- pop up box upon selecting info -->
-  <details class="dialog-box" id="stats_dialog">
-
-  </details>
+  <div class="modal" tabindex="-1" id="info_modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tamagotchi Stats:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="info_modal_body">
+          
+          
+        </div>
+        <div class="modal-footer" id="death_modal_footer">
+          
+          <button type="button" class="okButton" id="info_modal_ok_button">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- main -->
   <div class="tamagotchi">
