@@ -95,12 +95,10 @@ $(window).on('load', function() {
 
 const makeTamagotchi = function() {
   console.log("saveName function called");
-  $(".modal-footer button").off();
+  $("#name_modal_footer button").off();
   $('#name_modal').modal('hide');
   tamagotchi = new Tamagotchi($(".modal-body input").val());
 }
-
-$(".modal-footer button").click(makeTamagotchi);
 
 /* === Age Tamagotchi and Decrease Stats Over Time === */
 
@@ -122,7 +120,7 @@ const animateTamagotchi = function() {
   }
 }
 
-// setInterval(animateTamagotchi, 1000);
+setInterval(animateTamagotchi, 1000);
 
 /* === Set Global Variables for Gameplay === */
 const $eat = $(".gg-bowl");
@@ -188,14 +186,19 @@ const selectAction = function(){
     tamagotchi.play('games');
 
   } else {
-    window.alert(`    hunger: ${tamagotchi.hunger}
-    sleepiness: ${tamagotchi.sleepiness}
-    boredom: ${tamagotchi.boredom}
-    age: ${tamagotchi.age}
-    If hunger, sleepiness, or boredom reach 10,
-    your tamagotchi will die.
+    /* === Show Info Modal === */
+    $("#info_modal_body").append(`<p>Hunger: ${tamagotchi.hunger} </br> Sleepiness: ${tamagotchi.sleepiness} </br> Boredom: ${tamagotchi.boredom} </br> Age: ${tamagotchi.age} </p>`);
+    $('#info_modal').modal('show');
 
-    The oldest age possible is 3.`);
+  
+  //   window.alert(`    hunger: ${tamagotchi.hunger}
+  //   sleepiness: ${tamagotchi.sleepiness}
+  //   boredom: ${tamagotchi.boredom}
+  //   age: ${tamagotchi.age}
+  //   If hunger, sleepiness, or boredom reach 10,
+  //   your tamagotchi will die.
+
+  //   The oldest age possible is 3.`);
     
   }
   
@@ -213,5 +216,20 @@ $("#B").click(selectAction);
 $("#C").click(cancelAction);
 
 
-/* === Popup Windows === */
+/* === Show Modals === */
 
+/* === Death Modal === */
+const showDeathModal = function (causeOfDeath){
+  $('#death_modal').modal('show');
+  console.log(causeOfDeath);
+}
+
+
+/* === Event Listeners === */
+
+$("#name_modal_footer button").click(makeTamagotchi);
+
+$("#info_modal_ok_button").click(function() {
+  $("#info_modal_body").empty();
+  $('#info_modal').modal('hide');
+});
