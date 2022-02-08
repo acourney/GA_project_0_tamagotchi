@@ -19,11 +19,21 @@ How to play:
 ## Wireframe:
 Users will see an oval with a square screen and three buttons.
 
-At the top of the square screen, there will be icons that the user can select and expand to see the tamagotchi's hunger, energy, fun levels, and age.
+The buttons can be used to navigate through the options on the screen.
+
+At the top of the square screen, there will be three icons that the user can select to feed the Tamagotchi, let the Tamagotchi sleep, or play games with the Tamagotchi. There will be a fourth icon that the user can expand to see the tamagotchi's hunger, energy, fun levels, and age.
 
 In the middle of the screen the user will see the tamagotchi.
 
-![tamagotchi wireframe](https://imgur.com/1P5vCAi.png)
+![tamagotchi wireframe](https://i.imgur.com/Fhvr7pR.jpg)
+
+Throughout the game the user will see various popups.
+
+The first popup lets the user set the Tamagotchi's name.
+The second popup displays if the Tamagotchi dies.
+The third popup displays if the user selects the information icon on screen (option G in the menu).
+
+![popups wireframe](https://i.imgur.com/hwuOqMz.jpg)
 
 ## Approach:
 
