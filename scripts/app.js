@@ -26,8 +26,8 @@ class Tamagotchi {
   increaseHunger(){
     console.log(`increasing hunger to ${this.hunger}`);
     if (this.hunger >= 10) {
-      window.alert(`${this.name} died from starvation. Game over.`);
-      window.location.reload();
+      showDeathModal("starvation");
+      
     } else {
       this.hunger += 1;
     }
@@ -37,8 +37,8 @@ class Tamagotchi {
   increaseSleepiness(){
     console.log(`increasing sleepiness to ${this.sleepiness}`);
     if (this.sleepiness >= 10) {
-      window.alert(`${this.name} died from lack of sleep. Game over.`);
-      window.location.reload();
+      showDeathModal("lack of sleep");
+      
     } else {
       this.sleepiness += 1;
     } 
@@ -47,8 +47,8 @@ class Tamagotchi {
   increaseBoredom(){
     console.log(`increasing boredom to ${this.boredom}`);
     if (this.boredom >= 10) {
-      window.alert(`${this.name} died from boredom. Game over.`);
-      window.location.reload();
+      showDeathModal("boredom");
+
     } else {
       this.boredom += 1;
     }
@@ -101,13 +101,17 @@ const makeTamagotchi = function() {
 }
 
 /* === Age Tamagotchi and Decrease Stats Over Time === */
+/* I want to offset the increase of hunger, boredom, and sleepiness
+so a tamagotchi can't die of all three at the same time.*/
+const nineSeconds = 9000;
+const tenSeconds = 10000;
+const elevenSeconds = 11000;
+const fifteenSeconds = 15000;
 
-const fifteenSeconds = 10000;
-
-// setInterval(() => tamagotchi.increaseHunger(), fifteenSeconds);
-// setInterval(() => tamagotchi.increaseSleepiness(), fifteenSeconds);
-// setInterval(() => tamagotchi.increaseBoredom(), fifteenSeconds);
-// setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
+setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
+setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
+setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
+setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
 
 
 const animateTamagotchi = function() {
@@ -187,19 +191,8 @@ const selectAction = function(){
 
   } else {
     /* === Show Info Modal === */
-    $("#info_modal_body").append(`<p>Hunger: ${tamagotchi.hunger} </br> Sleepiness: ${tamagotchi.sleepiness} </br> Boredom: ${tamagotchi.boredom} </br> Age: ${tamagotchi.age} </p>`);
-    $('#info_modal').modal('show');
-
-  
-  //   window.alert(`    hunger: ${tamagotchi.hunger}
-  //   sleepiness: ${tamagotchi.sleepiness}
-  //   boredom: ${tamagotchi.boredom}
-  //   age: ${tamagotchi.age}
-  //   If hunger, sleepiness, or boredom reach 10,
-  //   your tamagotchi will die.
-
-  //   The oldest age possible is 3.`);
-    
+    $("#info_modal_body").append(`<p>Hunger: ${tamagotchi.hunger} </br> Sleepiness: ${tamagotchi.sleepiness} </br> Boredom: ${tamagotchi.boredom} </br></br> Age: ${tamagotchi.age} </p>`);
+    $('#info_modal').modal('show');    
   }
   
 }
@@ -220,8 +213,10 @@ $("#C").click(cancelAction);
 
 /* === Death Modal === */
 const showDeathModal = function (causeOfDeath){
-  $('#death_modal').modal('show');
   console.log(causeOfDeath);
+  $("#death_modal_body").append(`<p>${tamagotchi.name} has died from ${causeOfDeath}. </p>`);
+  $('#death_modal').modal('show');
+  return;
 }
 
 
@@ -232,4 +227,8 @@ $("#name_modal_footer button").click(makeTamagotchi);
 $("#info_modal_ok_button").click(function() {
   $("#info_modal_body").empty();
   $('#info_modal').modal('hide');
+});
+
+$("#death_modal_footer button").click(function() {
+  window.location.reload();
 });
