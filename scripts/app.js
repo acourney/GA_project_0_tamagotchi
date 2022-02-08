@@ -1,8 +1,30 @@
 /* === TODO === */
 /*
 1. add sprites and animations for age 1, 2, and 3
-2. once a tomagotchi dies, refresh page immediately (right now it needs you to press ok multiple times)
+2. once a tomagotchi dies, code stops running
 */
+
+/* === Images === */
+const age0_movementA_happy = "https://imgur.com/3EutgIA.png";
+const age0_movementA_sad = "https://imgur.com/TidTTI5.png";
+const age0_movementB_happy = "https://imgur.com/DeEFH0A.png";
+const age0_movementB_sad = "https://imgur.com/xoWGNm4.png";
+
+const age1_movementA_happy = "https://imgur.com/JsR5FhR.png";
+const age1_movementA_sad = "https://imgur.com/BkW7Etk.png";
+const age1_movementB_happy = "https://imgur.com/2LTAeVl.png";
+const age1_movementB_sad = "https://imgur.com/mhVYd8k.png";
+
+const age2_movementA_happy = "https://imgur.com/dp4k2rg.png";
+const age2_movementA_sad = "https://imgur.com/svF0xQC.png";
+const age2_movementB_happy = "https://imgur.com/fmoYSK2.png";
+const age2_movementB_sad = "https://imgur.com/zZHxH2q.png";
+
+const age3_movementA_happy = "https://imgur.com/lVcxWk4.png";
+const age3_movementA_sad = "https://imgur.com/7rIHo3A.png";
+const age3_movementB_happy = "https://imgur.com/t4d0MRz.png";
+const age3_movementB_sad = "https://imgur.com/a2EIjwy.png";
+
 
 /* === Instantiate Tamagotchi === */
 class Tamagotchi {
