@@ -105,11 +105,11 @@ setInterval(animateTamagotchi, 1000);
 
 /* === Set Global Variables for Gameplay === */
 const $eat = $(".gg-bowl");
-const $lightOn = $(".gg-sun");
+const $sleep = $("#bed-icon");
 const $play = $(".gg-games");
 const $info = $(".gg-info");  
 //const $("")
-const navBarArray = [$eat, $lightOn, $play, $info];
+const navBarArray = [$eat, $sleep, $play, $info];
 
 const selectedTextColor = 'rgb(244, 245, 211)';
 const unselectedTextColor = 'rgb(31, 27, 27)';
@@ -117,23 +117,23 @@ const unselectedTextColor = 'rgb(31, 27, 27)';
 /* === Set Actions for Buttons === */
 
 const highlightIcons = function(){
-  if ($eat.css("color") === unselectedTextColor && $lightOn.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
+  if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
     $eat.css("color", "var(--main-text-color)");
     
   
-  } else if ($eat.css("color") === selectedTextColor && $lightOn.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
+  } else if ($eat.css("color") === selectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
     $eat.css("color", "var(--secondary-text-color)");
-    $lightOn.css("color", "var(--main-text-color)");
+    $sleep.css("color", "var(--main-text-color)");
   
-  } else if ($eat.css("color") === unselectedTextColor && $lightOn.css("color") === selectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
+  } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === selectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
-    $lightOn.css("color", "var(--secondary-text-color)");
+    $sleep.css("color", "var(--secondary-text-color)");
     $play.css("color", "var(--main-text-color)");
     
   
-  } else if ($eat.css("color") === unselectedTextColor && $lightOn.css("color") === unselectedTextColor && $play.css("color") === selectedTextColor && $info.css("color") === unselectedTextColor) {
+  } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === selectedTextColor && $info.css("color") === unselectedTextColor) {
     
     $play.css("color", "var(--secondary-text-color)");
     $info.css("color", "var(--main-text-color)");
@@ -150,19 +150,19 @@ const highlightIcons = function(){
 }
 
 const selectAction = function(){
-  if ($eat.css("color") === unselectedTextColor && $lightOn.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
+  if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
     console.log("nothing selected");
   
-  } else if ($eat.css("color") === selectedTextColor && $lightOn.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
+  } else if ($eat.css("color") === selectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
     tamagotchi.eat('food');
   
-  } else if ($eat.css("color") === unselectedTextColor && $lightOn.css("color") === selectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
+  } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === selectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
     tamagotchi.sleep(1);
 
-  } else if ($eat.css("color") === unselectedTextColor && $lightOn.css("color") === unselectedTextColor && $play.css("color") === selectedTextColor && $info.css("color") === unselectedTextColor) {
+  } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === selectedTextColor && $info.css("color") === unselectedTextColor) {
     
     tamagotchi.play('games');
 
@@ -182,7 +182,7 @@ const selectAction = function(){
 
 const cancelAction = function(){
   $eat.css("color", "var(--secondary-text-color)");
-  $lightOn.css("color", "var(--secondary-text-color)");
+  $sleep.css("color", "var(--secondary-text-color)");
   $play.css("color", "var(--secondary-text-color)");
   $info.css("color", "var(--secondary-text-color)");
 }
