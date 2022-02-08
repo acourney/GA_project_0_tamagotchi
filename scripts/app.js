@@ -49,8 +49,9 @@ class Tamagotchi {
 
   increaseAge(){
     console.log(`increasing age to ${this.age}`);
-    this.age += 1;
-    // this will change the image of the tamagotchi
+    if (this.age < 3 ) {
+      this.age += 1;
+    }
   }
 
   eat(food){
