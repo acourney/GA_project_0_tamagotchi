@@ -1,13 +1,20 @@
+/* === TODO === */
+/*
+1. add sprites and animations for age 1, 2, and 3
+2. once a tomagotchi dies, refresh page immediately (right now it needs you to press ok multiple times)
+*/
+
 /* === Instantiate Tamagotchi === */
 class Tamagotchi {
-  constructor() {
+  constructor(name) {
     // initial properties:
     this.hunger = 1;
     this.sleepiness = 1;
     this.boredom = 1;
     this.age = 0;
     // user-assigned properties:
-    this.name = prompt("What is your tamagotchi's name?");
+    // this.name = prompt("What is your tamagotchi's name?");
+    this.name = name;
 
     console.log(`initial hunger ${this.hunger}, type: ${typeof this.hunger}`);
     console.log(`initial sleepiness ${this.sleepiness}, type: ${typeof this.sleepiness}`);
@@ -80,16 +87,16 @@ class Tamagotchi {
 
 }
 
-const tamagotchi = new Tamagotchi();
+const tamagotchi = new Tamagotchi("Stevie");
 
 /* === Age Tamagotchi and Decrease Stats Over Time === */
 
 const fifteenSeconds = 10000;
 
-setInterval(() => tamagotchi.increaseHunger(), fifteenSeconds);
-setInterval(() => tamagotchi.increaseSleepiness(), fifteenSeconds);
-setInterval(() => tamagotchi.increaseBoredom(), fifteenSeconds);
-setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
+// setInterval(() => tamagotchi.increaseHunger(), fifteenSeconds);
+// setInterval(() => tamagotchi.increaseSleepiness(), fifteenSeconds);
+// setInterval(() => tamagotchi.increaseBoredom(), fifteenSeconds);
+// setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
 
 
 const animateTamagotchi = function() {
@@ -102,7 +109,7 @@ const animateTamagotchi = function() {
   }
 }
 
-setInterval(animateTamagotchi, 1000);
+// setInterval(animateTamagotchi, 1000);
 
 /* === Set Global Variables for Gameplay === */
 const $eat = $(".gg-bowl");
@@ -191,3 +198,21 @@ const cancelAction = function(){
 $("#A").click(highlightIcons);
 $("#B").click(selectAction);
 $("#C").click(cancelAction);
+
+
+/* === Popup Windows === */
+
+/* === Save Tamagotchi Name === */
+$(window).on('load', function() {
+  $('#name_modal').modal('show');
+});
+
+
+const saveName = function() {
+  console.log("saveName function called");
+  const tamagotchiName = $("#input_name").val();
+  $("#name_input_ok_button").off();
+  return tamagotchiName
+}
+
+const userInputName = $("#name_input_ok_button").click(saveName());

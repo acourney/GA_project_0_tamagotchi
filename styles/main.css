@@ -1,3 +1,11 @@
+/* === TODO === */
+/*
+1. make tamagotchi look 3D
+2. center tamagotchi vertically on page
+3. style dialog prompts
+4. animate body background or add a fun image
+*/
+
 :root {
   /* main color palette */
   --background: #734F5A;
@@ -14,9 +22,11 @@
 
   /* background colors */
 }
-
-body {
+body{ 
   background-color: var(--background);
+}
+
+.tamagotchi {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
   <!-- css.gg -->
   <link href='https://css.gg/css' rel='stylesheet'>
   <!-- font awesome -->
@@ -23,40 +31,81 @@
 </head>
 
 <body>
-  <main>
 
-    <div id="screen">
+  <!-- pop up modal on page load to input tamagotchi name -->
 
-      <nav>
-        <i class="gg-bowl"></i>
-        <i id= "bed-icon" class="fas fa-bed"></i>
-        <i class="gg-games"></i>
-        <i class="gg-info"></i>
-      </nav>
-
-      <section>
-        <img id="tamagotchi-sprite" src="https://i.imgur.com/DanpbUo.png" alt="">
-      </section>
-
+  <div class="modal" tabindex="-1" id="name_modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">What would you like to name your Tamagotchi?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="textbox" id="input_name">
+          
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="okButton" id="name_input_ok_button">OK</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <footer>
+  <!-- <details class="dialog-box" id="name_dialog">
+    <h3>What would you like to name your Tamagotchi?</h3>
+    
+      <input type="textbox" id="input_name">
+      <button class="okButton" id="name_input_ok_button">OK</button>
+  </details> -->
 
-      <div class="buttons">
-        <button id="A"></button>
-        <button id="B"></button>
-        <button id="C"></button>
+  <!-- pop up box upon tamagotchi death -->
+  <details class="dialog-box" id="death_dialog">
+
+  </details>
+  <!-- pop up box upon selecting info -->
+  <details class="dialog-box" id="stats_dialog">
+
+  </details>
+
+  <!-- main -->
+  <div class="tamagotchi">
+    <main>
+
+      <div id="screen">
+
+        <nav>
+          <i class="gg-bowl"></i>
+          <i id= "bed-icon" class="fas fa-bed"></i>
+          <i class="gg-games"></i>
+          <i class="gg-info"></i>
+        </nav>
+
+        <section>
+          <img id="tamagotchi-sprite" src="https://i.imgur.com/DanpbUo.png" alt="">
+        </section>
+
       </div>
 
-      <div class="descriptions">
-        <p id="select">Select</p>
-        <p id="enter">Enter</p>
-        <p id="cancel">Cancel</p>
-      </div>
-      
-    </footer>
+      <footer>
 
-  </main>
+        <div class="buttons">
+          <button id="A"></button>
+          <button id="B"></button>
+          <button id="C"></button>
+        </div>
+
+        <div class="descriptions">
+          <p id="select">Select</p>
+          <p id="enter">Enter</p>
+          <p id="cancel">Cancel</p>
+        </div>
+        
+      </footer>
+
+    </main>
+  </div>
 </body>
 
 </html>
