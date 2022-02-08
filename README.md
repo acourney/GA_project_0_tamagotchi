@@ -38,6 +38,10 @@ The third popup displays if the user selects the information icon on screen (opt
 ## Approach:
 
 ## Technologies Used:
+- Bootstrap
+- jQuery
+- fontawesome
+- css.gg
 
 ## Installation:
 
