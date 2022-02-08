@@ -8,22 +8,48 @@ class Tamagotchi {
     this.age = 0;
     // user-assigned properties:
     this.name = prompt("What is your tamagotchi's name?");
+
+    console.log(`initial hunger ${this.hunger}, type: ${typeof this.hunger}`);
+    console.log(`initial sleepiness ${this.sleepiness}, type: ${typeof this.sleepiness}`);
+    console.log(`initial boredom ${this.boredom}, type: ${typeof this.boredom}`);
+    console.log(`initial age ${this.age}, type: ${typeof this.age}`);
+    console.log(`initial name ${this.name}, type: ${typeof this.name}`);
   }
 
   increaseHunger(){
-    return this.hunger += 1;
+    console.log(`increasing hunger to ${this.hunger}`);
+    if (this.hunger >= 10) {
+      window.alert(`${this.name} died from starvation. Game over.`);
+      window.location.reload();
+    } else {
+      this.hunger += 1;
+    }
+    
   }
 
   increaseSleepiness(){
-    return this.sleepiness += 1;
+    console.log(`increasing sleepiness to ${this.sleepiness}`);
+    if (this.sleepiness >= 10) {
+      window.alert(`${this.name} died from lack of sleep. Game over.`);
+      window.location.reload();
+    } else {
+      this.sleepiness += 1;
+    } 
   }
 
   increaseBoredom(){
-    return this.boredom += 1;
+    console.log(`increasing boredom to ${this.boredom}`);
+    if (this.boredom >= 10) {
+      window.alert(`${this.name} died from boredom. Game over.`);
+      window.location.reload();
+    } else {
+      this.boredom += 1;
+    }
   }
 
   increaseAge(){
-    return this.age += 1;
+    console.log(`increasing age to ${this.age}`);
+    this.age += 1;
     // this will change the image of the tamagotchi
   }
 
@@ -50,16 +76,20 @@ class Tamagotchi {
     }
     return this.boredom;
   }
+
 }
 
 const tamagotchi = new Tamagotchi();
 
 /* === Age Tamagotchi and Decrease Stats Over Time === */
 
-setInterval(tamagotchi.increaseHunger, 1800000);
-setInterval(tamagotchi.increaseSleepiness, 1800000);
-setInterval(tamagotchi.increaseBoredom, 1800000);
-setInterval(tamagotchi.increaseAge, 1800000);
+const fifteenSeconds = 10000;
+
+setInterval(() => tamagotchi.increaseHunger(), fifteenSeconds);
+setInterval(() => tamagotchi.increaseSleepiness(), fifteenSeconds);
+setInterval(() => tamagotchi.increaseBoredom(), fifteenSeconds);
+setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
+
 
 const animateTamagotchi = function() {
   if (tamagotchi.age === 0) {
