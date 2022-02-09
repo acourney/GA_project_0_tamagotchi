@@ -2,43 +2,58 @@
 /*
 1. make tamagotchi look 3D
 2. center tamagotchi vertically on page
-3. style dialog prompts
+3. style and center modals
 4. animate body background or add a fun image
+5. add ability to change tamagotchi color and background color
 */
 
 :root {
   /* main color palette */
   --background: #734F5A;
+
   --tamagotchi: #2A9D8F;
-  --screen: #264653;
-  --action: #C05761;
-  --secondary: #3A86FF;
+  --tamagotchi-lighter: #56c7bae3;
+
+  --screen: #456572a2;
   --nav-bar: hsl(197, 36%, 38%);
-  --error: #941C2F;
-  --warning: #FFBE0B;
-  --success : #17a95b;
+
+  --action: #C05761;
+  --action-lighter: #d1707ae7;
+  --secondary: #3A86FF;
+  
+
   --main-text-color: #F4F5D3;
   --secondary-text-color: #1f1b1b; 
 
   /* background colors */
 }
 body{ 
-  background-color: var(--background);
+  background-color: rgba(115,79,90,1);
+}
+
+.descriptions p{
+  color: var(--main-text-color);
+  text-shadow: -1px -2px var(--secondary-text-color);
 }
 
 .tamagotchi {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
+  position: absolute;
+  margin-left: 38vw;
+  margin-top: 150px;
+
 }
 
 main {
   height: 600px;
   width: 500px;
   
-  background-color: var(--tamagotchi);
+  background: rgb(145,152,229);
+  background: radial-gradient(circle, var(--tamagotchi-lighter) 50%, var(--tamagotchi) 65%);
 
-  border: 2px solid black;
+  border: 2px solid rgba(33,33,33,0.58);
   border-top-right-radius: 65%;
   border-top-left-radius: 65%;
   border-bottom-right-radius: 50%;
@@ -48,6 +63,13 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  /* add shine */
+  -webkit-box-shadow: inset 5px 5px 8px 5px rgba(255,255,255,0.8); 
+  box-shadow: inset 5px 5px 8px 5px rgba(255,255,255,0.8);
+  /* add shadow */
+  -webkit-box-shadow: 7px 7px 16px 4px rgba(33,33,33,0.58); 
+  box-shadow: 7px 7px 16px 4px rgba(33,33,33,0.58);
 }
 
 #screen {
@@ -56,12 +78,17 @@ main {
 
   background-color: var(--screen);
 
-  border: 2px solid black;
-  
+  border: 2px solid rgba(33,33,33,0.8);
+  border-radius: 10px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  /* add shadow */
+  -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
+  box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
 
 }
 
@@ -72,12 +99,19 @@ nav {
   background-color: var(--nav-bar);
   color: var(--secondary-text-color);
 
+  border-right: 2px solid rgba(33,33,33,0.8);
+  border-left: 2px solid rgba(33,33,33,0.8);
   border-bottom: 2px solid hsla(0, 0%, 100%, .2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  
+  -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
+  box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
 }
 
 section {
@@ -85,7 +119,7 @@ section {
   height: 210px;
 }
 
-footer {
+.tamagotchi-footer {
   width: 250px;
   height: 100px;
 
@@ -102,13 +136,16 @@ button {
   height: 30px;
   width: 30px;
 
-  background-color: var(--action);
+  background: radial-gradient(circle, var(--action-lighter) 50%, var(--action) 65%);
 
   border-radius: 50%;
+
+  -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
+  box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
 }
 
 .buttons, .descriptions {
-  width: 250px;
+  width: 300px;
   height: 100px;
 
   display: flex;
@@ -124,6 +161,45 @@ button {
   
 }
 
+#B {
+  margin-top: 45px;
+}
+
 #enter {
   padding-left: 8px;
+  margin-top: 25px;
 }
+
+/* === Style Modals === */
+#modal {
+	display: 'flex';
+	justify-content: 'center';
+	align-items: 'center';
+}
+
+#name_modal .modal-body, #name_modal .modal-footer {
+  text-align: center;
+}
+
+#death_modal_footer button, #info_modal_footer button,  #name_modal_footer button {
+  height: 40px;
+  width: 40px;
+
+  background-color: var(--action);
+  border-radius: 4px;
+
+  text-align: center;
+
+  -webkit-box-shadow: none;
+  box-shadow: none;
+} 
+
+/* === page footer === */
+
+/* #page-footer {
+  display: flex;
+
+  position: absolute;
+  margin-left: 38vw;
+  margin-top: 150px;
+} */
