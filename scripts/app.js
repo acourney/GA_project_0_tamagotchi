@@ -54,7 +54,10 @@ class Tamagotchi {
     console.log(`increasing hunger to ${this.hunger}`);
     if (this.hunger >= 10) {
       showDeathModal("starvation");
-      
+      intervalList.forEach(function(interval) {
+        clearInterval(interval);
+      });
+
     } else {
       this.hunger += 1;
     }
@@ -65,7 +68,9 @@ class Tamagotchi {
     console.log(`increasing sleepiness to ${this.sleepiness}`);
     if (this.sleepiness >= 10) {
       showDeathModal("lack of sleep");
-      
+      intervalList.forEach(function(interval) {
+        clearInterval(interval);
+      });
     } else {
       this.sleepiness += 1;
     } 
@@ -75,7 +80,9 @@ class Tamagotchi {
     console.log(`increasing boredom to ${this.boredom}`);
     if (this.boredom >= 10) {
       showDeathModal("boredom");
-
+      intervalList.forEach(function(interval) {
+        clearInterval(interval);
+      });
     } else {
       this.boredom += 1;
     }
@@ -135,10 +142,10 @@ const tenSeconds = 10000;
 const elevenSeconds = 11000;
 const fifteenSeconds = 15000;
 
-setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
-setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
-setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
-setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
+const hungerInterval = setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
+const sleepinessInterval = setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
+const boredomInterval = setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
+const ageInterval = setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
 
 
 /* === Animate Tamagotchi === */
@@ -241,7 +248,10 @@ const animateTamagotchi = function() {
   }
 }
 
-setInterval(ageUpSprite, 1000);
+const animationInterval = setInterval(ageUpSprite, 1000);
+
+/* === storing intervals in a list to turn off later === */
+const intervalList = [hungerInterval, sleepinessInterval, boredomInterval, ageInterval, animationInterval];
 
 /* === Set Global Variables for Gameplay === */
 const $eat = $(".gg-bowl");
@@ -387,3 +397,5 @@ $(".page-footer #background-color").click(function() {
   }
 
 });
+
+
