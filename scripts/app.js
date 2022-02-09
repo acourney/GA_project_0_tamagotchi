@@ -1,34 +1,28 @@
 /* === TODO === */
 /*
-1. add sprites and animations for age 1, 2, and 3
-2. once a tomagotchi dies, code stops running
+1. Don't let execution start until a name variable is assigned
 */
 
 /* === Images === */
-const age0_neutral = "https://imgur.com/BHL5rSi.png";
-const age1_neutral = "https://imgur.com/F6RzCfP.png";
-const age2_neutral = "https://imgur.com/EmVCw1s.png";
-const age3_neutral = "https://imgur.com/O6pfwW7.png";
+const age0_movementA_happy = "https://imgur.com/pUnWbun.png";
+const age0_movementA_sad = "https://imgur.com/8YIq0EL.png";
+const age0_movementB_happy = "https://imgur.com/KiCFSIe.png";
+const age0_movementB_sad = "https://imgur.com/3n9qf8b.png";
 
-const age0_movementA_happy = "https://imgur.com/3EutgIA.png";
-const age0_movementA_sad = "https://imgur.com/TidTTI5.png";
-const age0_movementB_happy = "https://imgur.com/DeEFH0A.png";
-const age0_movementB_sad = "https://imgur.com/xoWGNm4.png";
+const age1_movementA_happy = "https://imgur.com/H40VBM8.png";
+const age1_movementA_sad = "https://imgur.com/FanDIha.png";
+const age1_movementB_happy = "https://imgur.com/iBK1QBJ.png";
+const age1_movementB_sad = "https://imgur.com/kRuAKW0.png";
 
-const age1_movementA_happy = "https://imgur.com/JsR5FhR.png";
-const age1_movementA_sad = "https://imgur.com/BkW7Etk.png";
-const age1_movementB_happy = "https://imgur.com/2LTAeVl.png";
-const age1_movementB_sad = "https://imgur.com/mhVYd8k.png";
+const age2_movementA_happy = "https://imgur.com/jYcg6dw.png";
+const age2_movementA_sad = "https://imgur.com/rBwaH7W.png";
+const age2_movementB_happy = "https://imgur.com/m3tYoQ9.png";
+const age2_movementB_sad = "https://imgur.com/wXgwBml.png";
 
-const age2_movementA_happy = "https://imgur.com/dp4k2rg.png";
-const age2_movementA_sad = "https://imgur.com/svF0xQC.png";
-const age2_movementB_happy = "https://imgur.com/fmoYSK2.png";
-const age2_movementB_sad = "https://imgur.com/zZHxH2q.png";
-
-const age3_movementA_happy = "https://imgur.com/lVcxWk4.png";
-const age3_movementA_sad = "https://imgur.com/7rIHo3A.png";
-const age3_movementB_happy = "https://imgur.com/t4d0MRz.png";
-const age3_movementB_sad = "https://imgur.com/a2EIjwy.png";
+const age3_movementA_happy = "https://imgur.com/dmA0M06.png";
+const age3_movementA_sad = "https://imgur.com/zW1FxS6.png";
+const age3_movementB_happy = "https://imgur.com/e8opavu.png";
+const age3_movementB_sad = "https://imgur.com/TBzH82j.png";
 
 
 /* === Instantiate Tamagotchi === */
