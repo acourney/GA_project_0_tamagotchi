@@ -179,54 +179,64 @@ const animateTamagotchi = function() {
 
   if (mood === "sad") {
     if (tamagotchi.age === 0){
-      if ($("#tamagotchi-sprite").attr("src") !== "https://imgur.com/xoWGNm4.png") {
-        console.log(`CONDITION 1 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+      if ($("#tamagotchi-sprite").attr("src") !== age0_movementB_sad) {
         $("#tamagotchi-sprite").attr("src", age0_movementB_sad);
-      } else if ($("#tamagotchi-sprite").attr("src") === "https://imgur.com/xoWGNm4.png") {
-        console.log(`CONSITION 2 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+      } else if ($("#tamagotchi-sprite").attr("src") === age0_movementB_sad) {
         $("#tamagotchi-sprite").attr("src", age0_movementA_sad);
       }
     }
         
     if (tamagotchi.age === 1){
-      if ($("#tamagotchi-sprite").attr("src") !== "https://imgur.com/mhVYd8k.png") {
-        console.log(`CONDITION 3 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+      if ($("#tamagotchi-sprite").attr("src") !== age1_movementB_sad) {
         $("#tamagotchi-sprite").attr("src", age1_movementB_sad);
-      } else if ($("#tamagotchi-sprite").attr("src") === "https://imgur.com/mhVYd8k.png") {
-        console.log(`CONDITION 4 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+      } else if ($("#tamagotchi-sprite").attr("src") === age1_movementB_sad) {
         $("#tamagotchi-sprite").attr("src", age1_movementA_sad);
       }
     }          
     if (tamagotchi.age === 2){
-      if ($("#tamagotchi-sprite").attr("src") === '') {
-
-      } 
+      if ($("#tamagotchi-sprite").attr("src") !== age2_movementB_sad) {
+        $("#tamagotchi-sprite").attr("src", age2_movementB_sad);
+      } else if ($("#tamagotchi-sprite").attr("src") === age2_movementB_sad) {
+        $("#tamagotchi-sprite").attr("src", age2_movementA_sad);
+      }
     }      
     if (tamagotchi.age === 3){
-      if ($("#tamagotchi-sprite").attr("src") === '') {
-
-      } 
+      if ($("#tamagotchi-sprite").attr("src") !== age3_movementB_sad) {
+        $("#tamagotchi-sprite").attr("src", age3_movementB_sad);
+      } else if ($("#tamagotchi-sprite").attr("src") === age3_movementB_sad) {
+        $("#tamagotchi-sprite").attr("src", age3_movementA_sad);
+      }
     }      
 
 
   } else if (mood === "happy") {
     if (tamagotchi.age === 0){
-      if ($("#tamagotchi-sprite").attr("src") !== "https://imgur.com/DeEFH0A.png") {
-        console.log(`CONDITION 5 image source: ${$("#tamagotchi-sprite").attr("src")}`);
-        $("#tamagotchi-sprite").attr("src", "https://imgur.com/DeEFH0A.png");
-      } else if ($("#tamagotchi-sprite").attr("src") === "https://imgur.com/DeEFH0A.png") {
-        console.log(`CONDITION 6 image source: ${$("#tamagotchi-sprite").attr("src")}`);
-        $("#tamagotchi-sprite").attr("src", "https://imgur.com/3EutgIA.png");
+      if ($("#tamagotchi-sprite").attr("src") !== age0_movementB_happy) {
+        $("#tamagotchi-sprite").attr("src", age0_movementB_happy);
+      } else if ($("#tamagotchi-sprite").attr("src") === age0_movementB_happy) {
+        $("#tamagotchi-sprite").attr("src", age0_movementA_happy);
       }
     } else if (tamagotchi.age === 1) {
-      if ($("#tamagotchi-sprite").attr("src") !== "https://imgur.com/2LTAeVl.png") {
-        console.log(` CONDITION 7 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+      if ($("#tamagotchi-sprite").attr("src") !== age1_movementB_happy) {
         $("#tamagotchi-sprite").attr("src", age1_movementB_happy);
-      } else if ($("#tamagotchi-sprite").attr("src") === "https://imgur.com/2LTAeVl.png") {
-        console.log(`CONDITION 8 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+      } else if ($("#tamagotchi-sprite").attr("src") === age1_movementB_happy) {
         $("#tamagotchi-sprite").attr("src", age1_movementA_happy);
       }
-    }
+    }          
+    if (tamagotchi.age === 2){
+      if ($("#tamagotchi-sprite").attr("src") !== age2_movementB_happy) {
+        $("#tamagotchi-sprite").attr("src", age2_movementB_happy);
+      } else if ($("#tamagotchi-sprite").attr("src") === age2_movementB_happy) {
+        $("#tamagotchi-sprite").attr("src", age2_movementA_happy);
+      }
+    }      
+    if (tamagotchi.age === 3){
+      if ($("#tamagotchi-sprite").attr("src") !== age3_movementB_happy) {
+        $("#tamagotchi-sprite").attr("src", age3_movementB_happy);
+      } else if ($("#tamagotchi-sprite").attr("src") === age3_movementB_happy) {
+        $("#tamagotchi-sprite").attr("src", age3_movementA_happy);
+      }
+    }      
   
   }
 }
