@@ -42,6 +42,7 @@ The third popup displays if the user selects the information icon on screen (opt
 - jQuery
 - fontawesome
 - css.gg
+- Box-Shadow CSS Generator
 
 ## Installation:
 
