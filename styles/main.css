@@ -1,10 +1,7 @@
 /* === TODO === */
 /*
-1. make tamagotchi look 3D
-2. center tamagotchi vertically on page
-3. style and center modals
-4. animate body background or add a fun image
-5. add ability to change tamagotchi color and background color
+1. make it so you can only press the ok button to exit a modal
+2. fix the enter button (only like the top 25% is clickable)
 */
 
 :root {
@@ -173,6 +170,7 @@ button {
 
 #B {
   margin-top: 45px;
+  z-index: 1000;
 }
 
 #enter {
@@ -203,6 +201,10 @@ button {
   -webkit-box-shadow: none;
   box-shadow: none;
 } 
+
+.btn-close {
+  display: none;
+}
 
 /* === page footer === */
 
