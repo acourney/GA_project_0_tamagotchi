@@ -5,6 +5,11 @@
 */
 
 /* === Images === */
+const age0_neutral = "https://imgur.com/BHL5rSi.png";
+const age1_neutral = "https://imgur.com/F6RzCfP.png";
+const age2_neutral = "https://imgur.com/EmVCw1s.png";
+const age3_neutral = "https://imgur.com/O6pfwW7.png";
+
 const age0_movementA_happy = "https://imgur.com/3EutgIA.png";
 const age0_movementA_sad = "https://imgur.com/TidTTI5.png";
 const age0_movementB_happy = "https://imgur.com/DeEFH0A.png";
@@ -122,7 +127,7 @@ const makeTamagotchi = function() {
   tamagotchi = new Tamagotchi($(".modal-body input").val());
 }
 
-/* === Age Tamagotchi and Decrease Stats Over Time === */
+/* === Decrease Stats Over Time === */
 /* I want to offset the increase of hunger, boredom, and sleepiness
 so a tamagotchi can't die of all three at the same time.*/
 const nineSeconds = 9000;
@@ -136,17 +141,97 @@ setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
 setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
 
 
-const animateTamagotchi = function() {
-  if (tamagotchi.age === 0) {
-    if ($("#tamagotchi-sprite").attr("src") === 'https://i.imgur.com/DanpbUo.png') {
-      $("#tamagotchi-sprite").attr("src", "https://i.imgur.com/jhYgLVZ.png");
-    } else if ($("#tamagotchi-sprite").attr("src") === 'https://i.imgur.com/jhYgLVZ.png') {
-      $("#tamagotchi-sprite").attr("src", "https://i.imgur.com/DanpbUo.png");
-    }
+/* === Animate Tamagotchi === */
+
+const determineMood = function(){
+  if (tamagotchi.hunger < 5 && tamagotchi.boredom < 5 && tamagotchi.sleepiness < 5) {
+    console.log("the tamagotchi is happy");
+    return("happy");
+  } else {
+    console.log("the tamagotchi is sad.");
+    return("sad");
   }
 }
 
-setInterval(animateTamagotchi, 1000);
+const ageUpSprite = function() {
+  if (tamagotchi.age === 0) {
+    // $("#tamagotchi-sprite").attr("src", age0_neutral);
+    animateTamagotchi();
+  }
+  else if (tamagotchi.age === 1) {
+    // $("#tamagotchi-sprite").attr("src", age1_neutral);
+    animateTamagotchi();
+  }  
+  else if (tamagotchi.age === 2) {
+    // $("#tamagotchi-sprite").attr("src", age2_neutral);
+    animateTamagotchi();
+  }
+  else if (tamagotchi.age >= 3) {
+    // $("#tamagotchi-sprite").attr("src", age3_neutral);
+    animateTamagotchi();
+  }
+
+}
+
+const animateTamagotchi = function() {
+
+  let mood = determineMood();
+
+  if (mood === "sad") {
+    if (tamagotchi.age === 0){
+      if ($("#tamagotchi-sprite").attr("src") !== "https://imgur.com/xoWGNm4.png") {
+        console.log(`CONDITION 1 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+        $("#tamagotchi-sprite").attr("src", age0_movementB_sad);
+      } else if ($("#tamagotchi-sprite").attr("src") === "https://imgur.com/xoWGNm4.png") {
+        console.log(`CONSITION 2 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+        $("#tamagotchi-sprite").attr("src", age0_movementA_sad);
+      }
+    }
+        
+    if (tamagotchi.age === 1){
+      if ($("#tamagotchi-sprite").attr("src") !== "https://imgur.com/mhVYd8k.png") {
+        console.log(`CONDITION 3 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+        $("#tamagotchi-sprite").attr("src", age1_movementB_sad);
+      } else if ($("#tamagotchi-sprite").attr("src") === "https://imgur.com/mhVYd8k.png") {
+        console.log(`CONDITION 4 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+        $("#tamagotchi-sprite").attr("src", age1_movementA_sad);
+      }
+    }          
+    if (tamagotchi.age === 2){
+      if ($("#tamagotchi-sprite").attr("src") === '') {
+
+      } 
+    }      
+    if (tamagotchi.age === 3){
+      if ($("#tamagotchi-sprite").attr("src") === '') {
+
+      } 
+    }      
+
+
+  } else if (mood === "happy") {
+    if (tamagotchi.age === 0){
+      if ($("#tamagotchi-sprite").attr("src") !== "https://imgur.com/DeEFH0A.png") {
+        console.log(`CONDITION 5 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+        $("#tamagotchi-sprite").attr("src", "https://imgur.com/DeEFH0A.png");
+      } else if ($("#tamagotchi-sprite").attr("src") === "https://imgur.com/DeEFH0A.png") {
+        console.log(`CONDITION 6 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+        $("#tamagotchi-sprite").attr("src", "https://imgur.com/3EutgIA.png");
+      }
+    } else if (tamagotchi.age === 1) {
+      if ($("#tamagotchi-sprite").attr("src") !== "https://imgur.com/2LTAeVl.png") {
+        console.log(` CONDITION 7 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+        $("#tamagotchi-sprite").attr("src", age1_movementB_happy);
+      } else if ($("#tamagotchi-sprite").attr("src") === "https://imgur.com/2LTAeVl.png") {
+        console.log(`CONDITION 8 image source: ${$("#tamagotchi-sprite").attr("src")}`);
+        $("#tamagotchi-sprite").attr("src", age1_movementA_happy);
+      }
+    }
+  
+  }
+}
+
+setInterval(ageUpSprite, 1000);
 
 /* === Set Global Variables for Gameplay === */
 const $eat = $(".gg-bowl");
