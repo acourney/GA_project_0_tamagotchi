@@ -1,8 +1,13 @@
 /* === TODO === */
 /*
-1. make it so you can only press the ok button to exit a modal
-2. fix the enter button (only like the top 25% is clickable)
+1. fix the changing height of notifications bar
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
   /* main color palette */
@@ -150,11 +155,16 @@ nav {
 
   -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
   box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
+
+  resize: none;
 }
 
 footer.screen {
   width: 250px;
   height: 40px;
+  
+  max-width: 250px;
+  max-height: 36px;
 
   background-color: rgb(62, 112, 132);
 
@@ -168,18 +178,19 @@ footer.screen {
 
   -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
   box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
+
+  resize: none;
 }
 
-/* #stats-notifications {
-  color: var(--main-text-color);
-  text-align: center;
-  justify-self: center;
-  padding-top: 7px;
-} */
+#stats-notifications {
+  max-height: 36px;
+  resize: none;
+} 
 
 section {
   width: 250px;
   height: 170px;
+  resize: none;
 }
 
 .tamagotchi-footer {
