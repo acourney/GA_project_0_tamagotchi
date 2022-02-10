@@ -137,9 +137,9 @@ const elevenSeconds = 11000;
 const fifteenSeconds = 15000;
 const oneHour = 36000000;
 
-const hungerInterval = setInterval(() => tamagotchi.increaseHunger(), oneHour);
-const sleepinessInterval = setInterval(() => tamagotchi.increaseSleepiness(), oneHour);
-const boredomInterval = setInterval(() => tamagotchi.increaseBoredom(), oneHour);
+const hungerInterval = setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
+const sleepinessInterval = setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
+const boredomInterval = setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
 const ageInterval = setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
 
 
