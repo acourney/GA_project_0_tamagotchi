@@ -17,7 +17,7 @@
   --tamagotchiThree: #3d405b;
   --tamagotchiThree-lighter: #4e5485;
 
-  --screen: #456572a2;
+  --screen: #456572;
   --nav-bar: hsl(197, 36%, 38%);
 
   --action: #C05761;
@@ -41,6 +41,7 @@ body{
 .descriptions p{
   color: var(--main-text-color);
   text-shadow: -1px -2px var(--secondary-text-color);
+  z-index: 700;
 }
 
 .tamagotchi {
@@ -93,10 +94,35 @@ main {
   align-items: center;
   justify-content: center;
 
+  position: relative;
+
+  z-index: 400;
   /* add shadow */
   -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
   box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
 
+}
+/* need this to be centered behind the screen */
+#screen_decorations {
+  width: 305px;
+  height: 450px;
+
+  background: radial-gradient(circle, rgb(244, 162, 97) 50%, rgb(206, 131, 70) 65%);
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  
+  -webkit-box-shadow: inset -1px -2px 16px 0px rgba(0,0,0,0.5); 
+box-shadow: inset -1px -2px 16px 0px rgba(0,0,0,0.5);
+
+-webkit-box-shadow: -1px -2px 16px 0px rgba(0,0,0,0.5); 
+box-shadow: -1px -2px 16px 0px rgba(0,0,0,0.5);
+
+  /* make it a weird shape */
+  clip-path: polygon(0% 76%, 11% 82%, 5% 92%, 17% 97%, 36% 88%, 46% 93%, 63% 86%, 76% 95%, 83% 88%, 97% 90%, 93% 75%, 99% 56%, 92% 31%, 98% 11%, 88% 1%, 75% 6%, 61% 0%, 42% 6%, 30% 0%, 14% 5%, 0% 6%, 6% 21%, 1% 30%, 5% 48%);
+
+  z-index: 250;
+  
 }
 
 nav {
@@ -117,6 +143,8 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   
+  z-index: 400;
+
   -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
   box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
 }
@@ -146,6 +174,8 @@ button {
   background: radial-gradient(circle, var(--action-lighter) 50%, var(--action) 65%);
 
   border-radius: 50%;
+
+  z-index: 400;
 
   -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
   box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
