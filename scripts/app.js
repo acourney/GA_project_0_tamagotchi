@@ -117,7 +117,7 @@ class Tamagotchi {
   }
 
 }
-/* === Make New Tamagotchi / Input Name === */
+/* === Input Name === */
 let tamagotchi = {};
 
 $(window).on('load', function() {
@@ -125,11 +125,29 @@ $(window).on('load', function() {
   $("body").css("pointer-events", "none");
 });
 
+
+/* === check for valid name ===*/
+$("#name_input_ok_button").click(function() {
+  if ($(".modal-body input").val() !== '') {
+    $('#name_modal').modal('hide');
+    makeTamagotchi();
+    // $("body").css("pointer-events", "none");
+  }
+});
+
+/* === Make New Tamagotchi === */
 const makeTamagotchi = function() {
   console.log("saveName function called");
   $("#name_modal_footer button").off();
-  $('#name_modal').modal('hide');
+  // $('#name_modal').modal('hide');
+  
+  // if ($(".modal-body input").val() === '') {
+  //   $('#name_modal').modal('show');
+  //   $("body").css("pointer-events", "none");
+  // } else if {
   tamagotchi = new Tamagotchi($(".modal-body input").val());
+  // }
+  
 }
 
 /* === Decrease Stats Over Time === */
@@ -381,7 +399,7 @@ $('.modal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
 
-$("#name_modal_footer button").click(makeTamagotchi);
+// $("#name_modal_footer button").click(makeTamagotchi);
 
 $("#info_modal_ok_button").click(function() {
   $("#info_modal_body").empty();
