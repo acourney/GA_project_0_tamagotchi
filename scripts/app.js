@@ -245,9 +245,6 @@ const animateTamagotchi = function() {
 
 const animationInterval = setInterval(ageUpSprite, 1000);
 
-/* === storing intervals in a list to turn off later === */
-const intervalList = [hungerInterval, sleepinessInterval, boredomInterval, ageInterval, animationInterval];
-
 /* === Set Global Variables for Gameplay === */
 const $eat = $(".gg-bowl");
 const $sleep = $("#bed-icon");
@@ -294,6 +291,7 @@ const highlightIcons = function(){
 
 }
 
+
 const selectAction = function(){
   if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
@@ -302,14 +300,17 @@ const selectAction = function(){
   } else if ($eat.css("color") === selectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
     tamagotchi.eat('food');
+    $("footer.screen").append("<p>Hunger -1</p>");
   
   } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === selectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     
     tamagotchi.sleep(1);
+    $("footer.screen").append("<p>Sleepiness -1</p>");
 
   } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === selectedTextColor && $info.css("color") === unselectedTextColor) {
     
     tamagotchi.play('games');
+    $("footer.screen").append("<p>Boredom -1</p>");
 
   } else {
     /* === Show Info Modal === */
@@ -318,6 +319,8 @@ const selectAction = function(){
   }
   
 }
+
+const statNotificationInterval = setInterval(() => $("footer.screen").empty(), 1500);
 
 const cancelAction = function(){
   $eat.css("color", "var(--secondary-text-color)");
@@ -413,4 +416,5 @@ $(".page-footer #background-color").click(function() {
 
 });
 
-
+/* === storing intervals in a list to turn off later === */
+const intervalList = [hungerInterval, sleepinessInterval, boredomInterval, ageInterval, animationInterval, statNotificationInterval];
