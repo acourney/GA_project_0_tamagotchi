@@ -135,10 +135,11 @@ const nineSeconds = 9000;
 const tenSeconds = 10000;
 const elevenSeconds = 11000;
 const fifteenSeconds = 15000;
+const oneHour = 36000000;
 
-const hungerInterval = setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
-const sleepinessInterval = setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
-const boredomInterval = setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
+const hungerInterval = setInterval(() => tamagotchi.increaseHunger(), oneHour);
+const sleepinessInterval = setInterval(() => tamagotchi.increaseSleepiness(), oneHour);
+const boredomInterval = setInterval(() => tamagotchi.increaseBoredom(), oneHour);
 const ageInterval = setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
 
 
@@ -343,6 +344,10 @@ const showDeathModal = function (causeOfDeath){
 
 /* === Event Listeners === */
 
+$('.modal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
 $("#name_modal_footer button").click(makeTamagotchi);
 
 $("#info_modal_ok_button").click(function() {
@@ -362,6 +367,14 @@ const tamagotchiColorOptions = [
   "rgba(0, 0, 0, 0) radial-gradient(circle, rgb(78, 84, 133) 50%, rgb(61, 64, 91) 65%) repeat scroll 0% 0% / auto padding-box border-box"
 ];
 
+const tamagotchiScreenDecorationOptions = [
+  "rgba(0, 0, 0, 0) radial-gradient(circle, rgb(244, 241, 222) 50%, rgb(248, 247, 237) 65%) repeat scroll 0% 0% / auto padding-box border-box",
+
+  "rgba(0, 0, 0, 0) radial-gradient(circle, rgb(132,159,213) 50%, rgb(109, 132, 179) 65%) repeat scroll 0% 0% / auto padding-box border-box",
+
+  "rgba(0, 0, 0, 0) radial-gradient(circle, rgb(236, 183, 191) 50%, rgb(228, 155, 166) 65%) repeat scroll 0% 0% / auto padding-box border-box"
+];
+
 const backgroundColorOptions = [
   "rgb(115, 79, 90)", 
   "rgb(244, 162, 97)",
@@ -372,12 +385,15 @@ $(".page-footer #tamagotchi-color").click(function() {
   if ($("main").css("background") === tamagotchiColorOptions[0]){
     $("main").css("background", tamagotchiColorOptions[1]);
     $("nav").css("background-color", "rgb(131, 84, 124)");
+    $("#screen_decorations").css('background', tamagotchiScreenDecorationOptions[2]);
   } else if ($("main").css("background") === tamagotchiColorOptions[1]){
     $("main").css("background", tamagotchiColorOptions[2]);
     $("nav").css("background-color", "rgb(62, 112, 132)");
+    $("#screen_decorations").css('background', tamagotchiScreenDecorationOptions[1]);
   } else if ($("main").css("background") === tamagotchiColorOptions[2]){
     $("main").css("background", tamagotchiColorOptions[0]);
     $("nav").css("background-color", "rgb(62, 112, 132)");
+    $("#screen_decorations").css('background', tamagotchiScreenDecorationOptions[0]);
   }
 });
 
