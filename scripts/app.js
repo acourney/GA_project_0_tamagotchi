@@ -420,14 +420,14 @@ $("#help-button").click(function() {
     clearInterval(interval);
   });
 
-  intervalList.empty();
+  intervalList.splice(0,intervalList.length);
 
 });
 
 $("#help_modal_footer button").click(function() {
   $("body").css("pointer-events", "auto");
   $('#help-modal').modal('hide');
-  
+
   startIntervals();
 
 });
