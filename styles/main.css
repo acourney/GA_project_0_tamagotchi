@@ -170,6 +170,13 @@ footer.screen {
   box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
 }
 
+/* #stats-notifications {
+  color: var(--main-text-color);
+  text-align: center;
+  justify-self: center;
+  padding-top: 7px;
+} */
+
 section {
   width: 250px;
   height: 170px;

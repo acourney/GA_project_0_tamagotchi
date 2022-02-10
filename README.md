@@ -43,6 +43,7 @@ The third popup displays if the user selects the information icon on screen (opt
 - fontawesome
 - css.gg
 - Box-Shadow CSS Generator
+- CSS clip-path maker (https://bennettfeely.com/clippy/)
 
 ## Installation:
 
