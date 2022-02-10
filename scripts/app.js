@@ -24,6 +24,29 @@ const age3_movementA_sad = "https://imgur.com/zW1FxS6.png";
 const age3_movementB_happy = "https://imgur.com/oC5rI4F.png";
 const age3_movementB_sad = "https://imgur.com/TBzH82j.png";
 
+/* === Function to Start Intervals === */
+const intervalList = [];
+const nineSeconds = 9000;
+const tenSeconds = 10000;
+const elevenSeconds = 11000;
+const fifteenSeconds = 15000;
+const oneHour = 36000000;
+
+const startIntervals = function () {
+  const hungerInterval = setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
+  const sleepinessInterval = setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
+  const boredomInterval = setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
+  const ageInterval = setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
+  const animationInterval = setInterval(ageUpSprite, 1000);
+
+  intervalList.push(hungerInterval);  
+  intervalList.push(sleepinessInterval);
+  intervalList.push(boredomInterval);
+  intervalList.push(ageInterval);
+  intervalList.push(animationInterval);
+};
+
+
 
 /* === Instantiate Tamagotchi === */
 class Tamagotchi {
@@ -131,6 +154,7 @@ $("#name_input_ok_button").click(function() {
   if ($(".modal-footer input").val() !== '') {
     $('#name_modal').modal('hide');
     makeTamagotchi();
+    startIntervals();
     // $("body").css("pointer-events", "none");
   }
 });
@@ -153,16 +177,7 @@ const makeTamagotchi = function() {
 /* === Decrease Stats Over Time === */
 /* I want to offset the increase of hunger, boredom, and sleepiness
 so a tamagotchi can't die of all three at the same time.*/
-const nineSeconds = 9000;
-const tenSeconds = 10000;
-const elevenSeconds = 11000;
-const fifteenSeconds = 15000;
-const oneHour = 36000000;
 
-const hungerInterval = setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
-const sleepinessInterval = setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
-const boredomInterval = setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
-const ageInterval = setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
 
 
 /* === Animate Tamagotchi === */
@@ -265,7 +280,6 @@ const animateTamagotchi = function() {
   }
 }
 
-const animationInterval = setInterval(ageUpSprite, 1000);
 
 /* === Set Global Variables for Gameplay === */
 const $eat = $(".gg-bowl");
@@ -330,6 +344,7 @@ const selectAction = function(){
       "justify-self": "center",
       "padding-top": "2px"
     });
+    setTimeout(() => $("footer.screen").empty(), 1500); 
 
   } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === selectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
     $("footer.screen").empty();
@@ -342,6 +357,7 @@ const selectAction = function(){
       "justify-self": "center",
       "padding-top": "2px"
     });
+    setTimeout(() => $("footer.screen").empty(), 1500); 
 
   } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === selectedTextColor && $info.css("color") === unselectedTextColor) {
     $("footer.screen").empty();
@@ -354,17 +370,19 @@ const selectAction = function(){
       "justify-self": "center",
       "padding-top": "2px"
     });
+    setTimeout(() => $("footer.screen").empty(), 1500); 
 
   } else {
     /* === Show Info Modal === */
     $("#info_modal_body").append(`<p>${tamagotchi.name}'s Hunger: ${tamagotchi.hunger} </br>${tamagotchi.name}'s Sleepiness: ${tamagotchi.sleepiness} </br>${tamagotchi.name}'s Boredom: ${tamagotchi.boredom} </br></br>${tamagotchi.name}'s Age: ${tamagotchi.age} </p>`);
     $('#info_modal').modal('show'); 
-    $("body").css("pointer-events", "none");   
+    $("body").css("pointer-events", "none");
+      
   }
   
 }
 
-const statNotificationInterval = setInterval(() => $("footer.screen").empty(), 1500);
+
 
 const cancelAction = function(){
   $eat.css("color", "var(--secondary-text-color)");
@@ -390,6 +408,16 @@ const showDeathModal = function (causeOfDeath){
 
 
 /* === Event Listeners === */
+$("#help-button").click(function() {
+  $("body").css("pointer-events", "none");
+  $('#help-modal').modal('show');
+});
+
+$("#help_modal_footer button").click(function() {
+  $("body").css("pointer-events", "auto");
+  $('#help-modal').modal('hide');
+});
+
 $(".okButton").click(function() {
   $("body").css("pointer-events", "auto");
 })
@@ -464,51 +492,8 @@ $(".page-footer #background-color").click(function() {
 
 });
 
-/* === storing intervals in a list to turn off later === */
-const intervalList = [hungerInterval, sleepinessInterval, boredomInterval, ageInterval, animationInterval, statNotificationInterval];
 
 
 /* === pause game to read about gameplay ===*/
-// let isPaused = false
+/* I also want to not be able to click outside the details while the detail is open*/
 
-// $("summary").click(function() {
-
-//   // if intervals are running, pause the game to read rules
-//   intervalList.forEach(function(interval) {
-//     if (!isPaused) {
-      
-//       clearInterval(interval);
-//       isPaused = true;
-//     } else {
-      
-//       setInterval(() => $("footer.screen").empty(), 1500);
-//       setInterval(ageUpSprite, 1000);
-//       setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
-//       setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
-//       setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
-//       setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
-//       isPaused = false;
-//     }
-//   });
-  //   if (!interval) {
-  //     intervalList.push(setInterval(() => $("footer.screen").empty(), 1500));
-  //     intervalList.push(setInterval(ageUpSprite, 1000));
-  //     intervalList.push(setInterval(() => tamagotchi.increaseHunger(), nineSeconds));
-  //     intervalList.push(setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds));
-  //     intervalList.push(setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds));
-  //     intervalList.push(setInterval(() => tamagotchi.increaseAge(), fifteenSeconds));
-  //   }  
-    
-  // });
-  // if clicked again, start intervals again
-  // intervalList.forEach(function(interval) {
-  //   if (!interval) {
-  //     setInterval(() => $("footer.screen").empty(), 1500);
-  //     setInterval(ageUpSprite, 1000);
-  //     setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
-  //     setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
-  //     setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
-  //     setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
-  //   }
-  // });
-// });

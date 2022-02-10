@@ -45,41 +45,22 @@ body{
   justify-content: center;
 }
 
-/* === make a help button === */
-#gameplay-instructions {
-  font-size: 14px;
+/* === style help button === */
 
+#help-button {
   position: absolute;
   right: 40px;
   top: 40px;
 
-  padding: 10px;
+  padding: 0px;
+
   background-color: rgba(228, 231, 224, 0.459);
-  color: var(--secondary-text-color);
-  text-shadow: -1px -1px var(--main-text-color);
+  color: var(--main-text-color);
+  text-shadow: -1px -1px var(--secondary-text-color);
   border: 2px solid rgba(33,33,33,0.8);
   border-radius: 10px;
-
-  z-index: 2000;
 }
 
-details > summary {
-  font-size: 12px;
-
-  list-style: none;
-  height: 12px;
-  width: 12px;
-  text-align: center;
-
-  vertical-align: middle;
-
-  margin: 0px;
-  
-}
-
-details > summary::-webkit-details-marker {
-  display: none;
-}
 
 /* === style main body of tamagotchi === */
 .descriptions p{
@@ -333,21 +314,6 @@ button {
 .modal-title {
   text-align: center;
 }
-
-/* #name-modal-footer {
-  padding: 0; 
-
-  display: flex;
-  flex-wrap: none;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-#input_name {
-  width: 80%;
-  align-self: center;
-} */
 
 #name_modal .modal-body, #name_modal .modal-footer {
   text-align: center;

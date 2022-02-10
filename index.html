@@ -31,14 +31,40 @@
 </head>
 
 <body>
-  <details class="options" id="gameplay-instructions"><summary> ? </summary>How to play: 
-  </br>use the Select button to cycle through the navigation background.
-  </br>When your action choice is highlighted, press Enter.
-  </br>You will be notified that your Tamagotchi's hunger, sleepiness
-  </br>or boredom levels decreased.
-  </br>Don't let any of these reach level 10!
-  </br>You can check these levels by selecting the info panel.
-  </br>Goal: </br> Keep your Tamagotchi alive! </details>
+  <!-- Gameplay Info Help Modal -->
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal"   data-target="#exampleModalCenter" id="help-button">
+    ?
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="help-modal" tabindex="-1" role="dialog"   aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">How to Play:</h5>
+          
+
+        </div>
+
+        <div class="modal-body">
+          </br>use the Select button to cycle through the navigation background.
+          </br>When your action choice is highlighted, press Enter.
+          </br>You will be notified that your Tamagotchi's hunger, sleepiness
+          </br>or boredom levels decreased.
+          </br>Don't let any of these reach level 10!
+          </br>You can check these levels by selecting the info panel.
+          </br>Goal: </br> Keep your Tamagotchi alive!
+        </div>
+
+        <div class="modal-footer" id="help_modal_footer">
+          
+          <button type="button" class="okButton" id="help_ok_button">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- pop up modal on page load to input tamagotchi name -->
   <div class="modal" tabindex="-1" id="name_modal">
     <div class="modal-dialog">
