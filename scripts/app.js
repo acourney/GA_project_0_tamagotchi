@@ -47,6 +47,7 @@ class Tamagotchi {
   increaseHunger(){
     console.log(`increasing hunger to ${this.hunger}`);
     if (this.hunger >= 10) {
+      $("body").css("pointer-events", "none"); 
       showDeathModal("starvation");
       intervalList.forEach(function(interval) {
         clearInterval(interval);
@@ -61,6 +62,7 @@ class Tamagotchi {
   increaseSleepiness(){
     console.log(`increasing sleepiness to ${this.sleepiness}`);
     if (this.sleepiness >= 10) {
+      $("body").css("pointer-events", "none"); 
       showDeathModal("lack of sleep");
       intervalList.forEach(function(interval) {
         clearInterval(interval);
@@ -73,6 +75,7 @@ class Tamagotchi {
   increaseBoredom(){
     console.log(`increasing boredom to ${this.boredom}`);
     if (this.boredom >= 10) {
+      $("body").css("pointer-events", "none"); 
       showDeathModal("boredom");
       intervalList.forEach(function(interval) {
         clearInterval(interval);
@@ -119,6 +122,7 @@ let tamagotchi = {};
 
 $(window).on('load', function() {
   $('#name_modal').modal('show');
+  $("body").css("pointer-events", "none");
 });
 
 const makeTamagotchi = function() {
@@ -302,6 +306,7 @@ const selectAction = function(){
     tamagotchi.eat('food');
     $("footer.screen").append("<p id='stats-notifications'>Hunger -1</p>");
     $("#stats-notifications").css({
+      "max-height": "36px",
       "color": "rgb(244, 245, 211)",
       "text-align": "center",
       "justify-self": "center",
@@ -313,6 +318,7 @@ const selectAction = function(){
     tamagotchi.sleep(1);
     $("footer.screen").append("<p id='stats-notifications'>Sleepiness -1</p>");
     $("#stats-notifications").css({
+      "max-height": "36px",
       "color": "rgb(244, 245, 211)",
       "text-align": "center",
       "justify-self": "center",
@@ -324,6 +330,7 @@ const selectAction = function(){
     tamagotchi.play('games');
     $("footer.screen").append("<p id='stats-notifications'>Boredom -1</p>");
     $("#stats-notifications").css({
+      "max-height": "36px",
       "color": "rgb(244, 245, 211)",
       "text-align": "center",
       "justify-self": "center",
@@ -332,8 +339,9 @@ const selectAction = function(){
 
   } else {
     /* === Show Info Modal === */
-    $("#info_modal_body").append(`<p>Hunger: ${tamagotchi.hunger} </br> Sleepiness: ${tamagotchi.sleepiness} </br> Boredom: ${tamagotchi.boredom} </br></br> Age: ${tamagotchi.age} </p>`);
-    $('#info_modal').modal('show');    
+    $("#info_modal_body").append(`<p>${tamagotchi.name}'s Hunger: ${tamagotchi.hunger} </br>${tamagotchi.name}'s Sleepiness: ${tamagotchi.sleepiness} </br>${tamagotchi.name}'s Boredom: ${tamagotchi.boredom} </br></br>${tamagotchi.name}'s Age: ${tamagotchi.age} </p>`);
+    $('#info_modal').modal('show'); 
+    $("body").css("pointer-events", "none");   
   }
   
 }
@@ -364,6 +372,10 @@ const showDeathModal = function (causeOfDeath){
 
 
 /* === Event Listeners === */
+$(".okButton").click(function() {
+  $("body").css("pointer-events", "auto");
+})
+
 
 $('.modal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
