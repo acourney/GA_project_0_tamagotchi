@@ -359,6 +359,8 @@ $("#death_modal_footer button").click(function() {
   window.location.reload();
 });
 
+
+/* === Changing Color Options === */
 const tamagotchiColorOptions = [
   "rgba(0, 0, 0, 0) radial-gradient(circle, rgba(86, 199, 186, 0.89) 50%, rgb(42, 157, 143) 65%) repeat scroll 0% 0% / auto padding-box border-box",
 
@@ -385,14 +387,17 @@ $(".page-footer #tamagotchi-color").click(function() {
   if ($("main").css("background") === tamagotchiColorOptions[0]){
     $("main").css("background", tamagotchiColorOptions[1]);
     $("nav").css("background-color", "rgb(131, 84, 124)");
+    $("footer.screen").css("background-color", "rgb(131, 84, 124)");
     $("#screen_decorations").css('background', tamagotchiScreenDecorationOptions[2]);
   } else if ($("main").css("background") === tamagotchiColorOptions[1]){
     $("main").css("background", tamagotchiColorOptions[2]);
     $("nav").css("background-color", "rgb(62, 112, 132)");
+    $("footer.screen").css("background-color", "rgb(62, 112, 132)");
     $("#screen_decorations").css('background', tamagotchiScreenDecorationOptions[1]);
   } else if ($("main").css("background") === tamagotchiColorOptions[2]){
     $("main").css("background", tamagotchiColorOptions[0]);
     $("nav").css("background-color", "rgb(62, 112, 132)");
+    $("footer.screen").css("background-color", "rgb(62, 112, 132)");
     $("#screen_decorations").css('background', tamagotchiScreenDecorationOptions[0]);
   }
 });

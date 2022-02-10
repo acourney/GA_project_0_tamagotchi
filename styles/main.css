@@ -146,7 +146,25 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   
-  z-index: 400;
+  z-index: 1000;
+
+  -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
+  box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
+}
+
+footer.screen {
+  width: 250px;
+  height: 40px;
+
+  background-color: rgb(62, 112, 132);
+
+  border-right: 2px solid rgba(33,33,33,0.8);
+  border-left: 2px solid rgba(33,33,33,0.8);
+  border-top: 2px solid hsla(0, 0%, 100%, .2);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  z-index: 300;
 
   -webkit-box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58); 
   box-shadow: inset 7px 7px 16px 4px rgba(33,33,33,0.58);
@@ -154,7 +172,7 @@ nav {
 
 section {
   width: 250px;
-  height: 210px;
+  height: 170px;
 }
 
 .tamagotchi-footer {
