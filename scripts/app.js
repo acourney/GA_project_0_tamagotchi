@@ -294,21 +294,21 @@ const highlightIcons = function(){
 
 const selectAction = function(){
   if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
-    
+    $("footer.screen").empty();
     console.log("nothing selected");
   
   } else if ($eat.css("color") === selectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
-    
+    $("footer.screen").empty();
     tamagotchi.eat('food');
     $("footer.screen").append("<p>Hunger -1</p>");
   
   } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === selectedTextColor && $play.css("color") === unselectedTextColor && $info.css("color") === unselectedTextColor) {
-    
+    $("footer.screen").empty();
     tamagotchi.sleep(1);
     $("footer.screen").append("<p>Sleepiness -1</p>");
 
   } else if ($eat.css("color") === unselectedTextColor && $sleep.css("color") === unselectedTextColor && $play.css("color") === selectedTextColor && $info.css("color") === unselectedTextColor) {
-    
+    $("footer.screen").empty();
     tamagotchi.play('games');
     $("footer.screen").append("<p>Boredom -1</p>");
 
