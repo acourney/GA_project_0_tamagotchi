@@ -6,6 +6,7 @@ This is a web-based game based on a Tamagotchi.
 
 You will need to feed and play with your tamagotchi, and let it get some sleep to keep it alive.
 The tamagotchi has four life stages, which are animated throughout the tamagotchi's lifespan.
+
 You lose the game if the tamagotchi's hunger, sleepiness, or boredom reach a level of 10.
 ### How to play:
 You can cycle through the interaction options with the select button and confirm your choice with the enter button. 
@@ -14,6 +15,8 @@ The select button will highlight the interaction options as you cycle through th
 The cancel button will cancel cycling through the options.
 
 You are notified when the tamagotchi's hunger, sleepiness, and boredom levels decrease as you care for it. But you can also check on the tamagotchi's stats and age by selecting the information option in the navigation bar.
+
+While it doesn't affect gameplay, you can use the "change color" and "change background" buttons to change the color scheme of the game.
 ## MVP User Stories:
 - As a user, I'd like to be able to name my pet so I can personalize the game.
 
@@ -45,7 +48,7 @@ The third popup displays if the user selects the information icon on screen (opt
 ![popups wireframe](https://i.imgur.com/hwuOqMz.jpg)
 
 ## Approach:
-To build this app, I used a class to build a tamagotchi object.
+To build this tamagotchi, I used a class to build a tamagotchi object.
 
 Then, one-by-one used event listeners to trigger methods within that tamagotchi class. 
 

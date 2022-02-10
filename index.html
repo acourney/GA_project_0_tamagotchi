@@ -31,7 +31,14 @@
 </head>
 
 <body>
-
+  <details class="options" id="gameplay-instructions"><summary> ? </summary>How to play: 
+  </br>use the Select button to cycle through the navigation background.
+  </br>When your action choice is highlighted, press Enter.
+  </br>You will be notified that your Tamagotchi's hunger, sleepiness
+  </br>or boredom levels decreased.
+  </br>Don't let any of these reach level 10!
+  </br>You can check these levels by selecting the info panel.
+  </br>Goal: </br> Keep your Tamagotchi alive! </details>
   <!-- pop up modal on page load to input tamagotchi name -->
   <div class="modal" tabindex="-1" id="name_modal">
     <div class="modal-dialog">
@@ -41,11 +48,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input type="textbox" id="input_name">
+          
           
         </div>
         <div class="modal-footer" id="name_modal_footer">
-          
+          <input type="textbox" id="input_name">
           <button type="button" class="okButton" id="name_input_ok_button">OK</button>
         </div>
       </div>
@@ -137,12 +144,15 @@
 
   <footer class="page-footer">
     <section class="options" id="tamagotchi-color">change color</section>
-  <section class="options" id="background-color">change background</section>
+    <section class="options" id="background-color">change background</section>
+    
   </footer>
   
   <div class="decoration" id="screen_decorations">
 
   </div>
+
+
 
 </body>
 

@@ -1,6 +1,6 @@
 /* === TODO === */
 /*
-1. Don't let execution start until a name variable is assigned
+1. Add comments to help readability
 */
 
 /* === Images === */
@@ -21,7 +21,7 @@ const age2_movementB_sad = "https://imgur.com/wXgwBml.png";
 
 const age3_movementA_happy = "https://imgur.com/dmA0M06.png";
 const age3_movementA_sad = "https://imgur.com/zW1FxS6.png";
-const age3_movementB_happy = "https://imgur.com/e8opavu.png";
+const age3_movementB_happy = "https://imgur.com/oC5rI4F.png";
 const age3_movementB_sad = "https://imgur.com/TBzH82j.png";
 
 
@@ -128,7 +128,7 @@ $(window).on('load', function() {
 
 /* === check for valid name ===*/
 $("#name_input_ok_button").click(function() {
-  if ($(".modal-body input").val() !== '') {
+  if ($(".modal-footer input").val() !== '') {
     $('#name_modal').modal('hide');
     makeTamagotchi();
     // $("body").css("pointer-events", "none");
@@ -145,7 +145,7 @@ const makeTamagotchi = function() {
   //   $('#name_modal').modal('show');
   //   $("body").css("pointer-events", "none");
   // } else if {
-  tamagotchi = new Tamagotchi($(".modal-body input").val());
+  tamagotchi = new Tamagotchi($(".modal-footer input").val());
   // }
   
 }
@@ -466,3 +466,49 @@ $(".page-footer #background-color").click(function() {
 
 /* === storing intervals in a list to turn off later === */
 const intervalList = [hungerInterval, sleepinessInterval, boredomInterval, ageInterval, animationInterval, statNotificationInterval];
+
+
+/* === pause game to read about gameplay ===*/
+// let isPaused = false
+
+// $("summary").click(function() {
+
+//   // if intervals are running, pause the game to read rules
+//   intervalList.forEach(function(interval) {
+//     if (!isPaused) {
+      
+//       clearInterval(interval);
+//       isPaused = true;
+//     } else {
+      
+//       setInterval(() => $("footer.screen").empty(), 1500);
+//       setInterval(ageUpSprite, 1000);
+//       setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
+//       setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
+//       setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
+//       setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
+//       isPaused = false;
+//     }
+//   });
+  //   if (!interval) {
+  //     intervalList.push(setInterval(() => $("footer.screen").empty(), 1500));
+  //     intervalList.push(setInterval(ageUpSprite, 1000));
+  //     intervalList.push(setInterval(() => tamagotchi.increaseHunger(), nineSeconds));
+  //     intervalList.push(setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds));
+  //     intervalList.push(setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds));
+  //     intervalList.push(setInterval(() => tamagotchi.increaseAge(), fifteenSeconds));
+  //   }  
+    
+  // });
+  // if clicked again, start intervals again
+  // intervalList.forEach(function(interval) {
+  //   if (!interval) {
+  //     setInterval(() => $("footer.screen").empty(), 1500);
+  //     setInterval(ageUpSprite, 1000);
+  //     setInterval(() => tamagotchi.increaseHunger(), nineSeconds);
+  //     setInterval(() => tamagotchi.increaseSleepiness(), tenSeconds);
+  //     setInterval(() => tamagotchi.increaseBoredom(), elevenSeconds);
+  //     setInterval(() => tamagotchi.increaseAge(), fifteenSeconds);
+  //   }
+  // });
+// });
