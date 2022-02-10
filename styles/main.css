@@ -113,10 +113,10 @@ main {
   align-self: center;
   
   -webkit-box-shadow: inset -1px -2px 16px 0px rgba(0,0,0,0.5); 
-box-shadow: inset -1px -2px 16px 0px rgba(0,0,0,0.5);
-
--webkit-box-shadow: -1px -2px 16px 0px rgba(0,0,0,0.5); 
-box-shadow: -1px -2px 16px 0px rgba(0,0,0,0.5);
+  box-shadow: inset -1px -2px 16px 0px rgba(0,0,0,0.5);
+  
+  -webkit-box-shadow: 3px 0px 12px 4px rgba(0,0,0,0.53); 
+  box-shadow: 3px 0px 12px 4px rgba(0,0,0,0.53);
 
   /* make it a weird shape */
   clip-path: polygon(0% 76%, 11% 82%, 5% 92%, 17% 97%, 36% 88%, 46% 93%, 63% 86%, 76% 95%, 83% 88%, 97% 90%, 93% 75%, 99% 56%, 92% 31%, 98% 11%, 88% 1%, 75% 6%, 61% 0%, 42% 6%, 30% 0%, 14% 5%, 0% 6%, 6% 21%, 1% 30%, 5% 48%);
