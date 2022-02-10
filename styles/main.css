@@ -340,6 +340,10 @@ button {
   display: none;
 }
 
+#help-modal{
+  text-align: left;
+}
+
 /* === page footer === */
 
 #page-footer {

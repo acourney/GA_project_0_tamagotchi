@@ -72,6 +72,7 @@ class Tamagotchi {
     if (this.hunger >= 10) {
       $("body").css("pointer-events", "none"); 
       showDeathModal("starvation");
+      $('#help-modal').modal('hide');
       intervalList.forEach(function(interval) {
         clearInterval(interval);
       });
@@ -87,6 +88,7 @@ class Tamagotchi {
     if (this.sleepiness >= 10) {
       $("body").css("pointer-events", "none"); 
       showDeathModal("lack of sleep");
+      $('#help-modal').modal('hide');
       intervalList.forEach(function(interval) {
         clearInterval(interval);
       });
@@ -100,6 +102,7 @@ class Tamagotchi {
     if (this.boredom >= 10) {
       $("body").css("pointer-events", "none"); 
       showDeathModal("boredom");
+      $('#help-modal').modal('hide');
       intervalList.forEach(function(interval) {
         clearInterval(interval);
       });
@@ -409,13 +412,24 @@ const showDeathModal = function (causeOfDeath){
 
 /* === Event Listeners === */
 $("#help-button").click(function() {
+
   $("body").css("pointer-events", "none");
   $('#help-modal').modal('show');
+
+  intervalList.forEach(function(interval) {
+    clearInterval(interval);
+  });
+
+  intervalList.empty();
+
 });
 
 $("#help_modal_footer button").click(function() {
   $("body").css("pointer-events", "auto");
   $('#help-modal').modal('hide');
+  
+  startIntervals();
+
 });
 
 $(".okButton").click(function() {
