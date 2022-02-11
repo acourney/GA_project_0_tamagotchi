@@ -158,7 +158,6 @@ $("#name_input_ok_button").click(function() {
     $('#name_modal').modal('hide');
     makeTamagotchi();
     startIntervals();
-    // $("body").css("pointer-events", "none");
   }
 });
 
@@ -166,21 +165,11 @@ $("#name_input_ok_button").click(function() {
 const makeTamagotchi = function() {
   console.log("saveName function called");
   $("#name_modal_footer button").off();
-  // $('#name_modal').modal('hide');
   
-  // if ($(".modal-body input").val() === '') {
-  //   $('#name_modal').modal('show');
-  //   $("body").css("pointer-events", "none");
-  // } else if {
   tamagotchi = new Tamagotchi($(".modal-footer input").val());
   // }
   
 }
-
-/* === Decrease Stats Over Time === */
-/* I want to offset the increase of hunger, boredom, and sleepiness
-so a tamagotchi can't die of all three at the same time.*/
-
 
 
 /* === Animate Tamagotchi === */
@@ -197,19 +186,15 @@ const determineMood = function(){
 
 const ageUpSprite = function() {
   if (tamagotchi.age === 0) {
-    // $("#tamagotchi-sprite").attr("src", age0_neutral);
     animateTamagotchi();
   }
   else if (tamagotchi.age === 1) {
-    // $("#tamagotchi-sprite").attr("src", age1_neutral);
     animateTamagotchi();
   }  
   else if (tamagotchi.age === 2) {
-    // $("#tamagotchi-sprite").attr("src", age2_neutral);
     animateTamagotchi();
   }
   else if (tamagotchi.age >= 3) {
-    // $("#tamagotchi-sprite").attr("src", age3_neutral);
     animateTamagotchi();
   }
 
