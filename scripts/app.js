@@ -418,7 +418,9 @@ $("#help_modal_footer button").click(function() {
 });
 
 $(".okButton").click(function() {
-  $("body").css("pointer-events", "auto");
+  if ($(".modal-footer input").val() !== '') {
+    $("body").css("pointer-events", "auto");
+  }
 })
 
 
