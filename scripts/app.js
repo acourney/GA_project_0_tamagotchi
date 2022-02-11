@@ -1,6 +1,5 @@
 /* === TODO === */
 /*
-1. Add comments to help readability
 */
 
 /* === Images === */
@@ -167,7 +166,6 @@ const makeTamagotchi = function() {
   $("#name_modal_footer button").off();
   
   tamagotchi = new Tamagotchi($(".modal-footer input").val());
-  // }
   
 }
 
@@ -274,7 +272,7 @@ const $eat = $(".gg-bowl");
 const $sleep = $("#bed-icon");
 const $play = $(".gg-games");
 const $info = $(".gg-info");  
-//const $("")
+
 const navBarArray = [$eat, $sleep, $play, $info];
 
 const selectedTextColor = 'rgb(244, 245, 211)';
@@ -428,7 +426,6 @@ $('.modal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
 
-// $("#name_modal_footer button").click(makeTamagotchi);
 
 $("#info_modal_ok_button").click(function() {
   $("#info_modal_body").empty();
@@ -492,9 +489,3 @@ $(".page-footer #background-color").click(function() {
   }
 
 });
-
-
-
-/* === pause game to read about gameplay ===*/
-/* I also want to not be able to click outside the details while the detail is open*/
-

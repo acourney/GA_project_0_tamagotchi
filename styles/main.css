@@ -1,6 +1,5 @@
 /* === TODO === */
 /*
-1. fix the changing height of notifications bar
 */
 
 * {
@@ -73,8 +72,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: absolute;
-  margin-left: 38vw;*/
   margin-top: 150px; 
 
 }
@@ -134,8 +131,6 @@ main {
 
   background: rgb(244, 241, 222);
   background: radial-gradient(circle, rgb(244, 241, 222) 50%, rgb(248, 247, 237) 65%);
-  /* background: radial-gradient(circle, rgb(132,159,213) 50%, rgb(109, 132, 179) 65%);
-  background: radial-gradient(circle, rgb(236, 183, 191) 50%, rgb(228, 155, 166) 65%); */ 
   position: absolute;
   justify-self: center;
   align-self: center;
