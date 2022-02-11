@@ -9,10 +9,10 @@ The tamagotchi has four life stages, which are animated throughout the tamagotch
 
 You lose the game if the tamagotchi's hunger, sleepiness, or boredom reach a level of 10.
 ### How to play:
-You can cycle through the interaction options with the select button and confirm your choice with the enter button. 
-The select button will highlight the interaction options as you cycle through them.
+You can cycle through the interaction options with the "select" button and confirm your choice with the "enter" button. 
+The "select" button will highlight the interaction options as you cycle through them.
 
-The cancel button will cancel cycling through the options.
+The "cancel" button will cancel cycling through the options.
 
 You are notified when the tamagotchi's hunger, sleepiness, and boredom levels decrease as you care for it. But you can also check on the tamagotchi's stats and age by selecting the information option in the navigation bar.
 
@@ -50,7 +50,7 @@ The third popup displays if the user selects the information icon on screen (opt
 ## Approach:
 To build this tamagotchi, I used a class to build a tamagotchi object.
 
-Then, one-by-one used event listeners to trigger methods within that tamagotchi class. 
+Then, one-by-one added event listeners to trigger methods within that tamagotchi class. 
 
 When the JavaScript and CSS were handled, I added custom animations to show the tamagotchi's age and mood.
 ## Technologies Used:
