@@ -1,7 +1,7 @@
 # MyTamagotchi
 #### Annie Courney
 
-## What is Project 0?
+## What is MyTamagotchi?
 This is a web-based game based on a Tamagotchi.
 
 You will need to feed and play with your tamagotchi, and let it get some sleep to keep it alive.
