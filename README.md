@@ -62,6 +62,6 @@ When the JavaScript and CSS were handled, I added custom animations to show the 
 - CSS clip-path maker (https://bennettfeely.com/clippy/)
 ## Installation:
 No installation necessary!
-To play, just head over to https://acourney.github.io/GA_project_0_tamagotchi/
+To play, just head over to https://acourney.github.io/MyTamagotchi/
 
 ## Unsolved Problems:
