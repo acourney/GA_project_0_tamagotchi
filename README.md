@@ -1,4 +1,4 @@
-# Project 0: Tamagotchi
+# MyTamagotchi
 #### Annie Courney
 
 ## What is Project 0?
